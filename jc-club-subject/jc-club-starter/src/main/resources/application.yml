@@ -3,9 +3,9 @@ server:
 spring:
   datasource:
     username: root
-    password: qvQP7MBvSkbyGzLzlRaPp9swmOmkqdVkVgBNPQF7pMlImathGYopQcWR2CuZMZAkL1xrDHwut9Hbr2TZ4qmr2Q==
+    password: heima123
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://117.72.14.166:3306/jc-club?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://192.168.200.146:3306/jc-club?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       initial-size: 20
@@ -24,9 +24,31 @@ spring:
           slow-sql-millis: 2000
           log-slow-sql: true
         wall:
-          enabled: true
+          enabled: false
         config:
-          enabled: true
+          enabled: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  
+# knife4j配置
+knife4j:
+  enable: true
+  openapi:
+    title: 题目微服务接口文档
+    description: 鸡翅题目微服务接口文档
+    email: your-email@example.com
+    concat: ChickenWing
+    url: https://docs.example.com
+    version: v1.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
 publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMJzo9TiSuOGAMR2Zma25lWdtR1oxq6RcZYnWE9vcYLNKxUOkBlvSfMrbS25KtlJi+hIzikfCoyTDB0VI5gB3Q8CAwEAAQ==
 logging:
   config: classpath:log4j2-spring.xml
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
